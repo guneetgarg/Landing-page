@@ -1,0 +1,20 @@
+{
+    "name": "landing-page-monorepo",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    "scripts": {
+        "dev": "npm run dev --workspaces",
+        "build": "npm run build --workspaces && node -e \"const fs=require('fs'); if(!fs.existsSync('dist')){fs.mkdirSync('dist')}; fs.copyFileSync('index.html', 'dist/index.html')\"",
+        "install:all": "npm install",
+        "start:1": "npm run dev -w 1",
+        "start:2": "npm run dev -w 2",
+        "start:3": "npm run dev -w 3",
+        "start:4": "npm run dev -w 4"
+    }
+}

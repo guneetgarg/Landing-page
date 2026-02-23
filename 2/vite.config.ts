@@ -4,9 +4,14 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/2/",
+  build: {
+    outDir: "../dist/2",
+    emptyOutDir: true,
+  },
   server: {
     host: "::",
-    port: 8080,
+    port: 8082,
     hmr: {
       overlay: false,
     },
